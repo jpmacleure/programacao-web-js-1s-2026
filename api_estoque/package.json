@@ -1,0 +1,14 @@
+{
+  "name": "api_estoque",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "Uma aplicação web",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
