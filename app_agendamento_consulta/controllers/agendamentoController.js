@@ -1,5 +1,4 @@
-// Guarda agendamentos
-let agendamentos = []
+const AgendamentoConsulta = require('../models/AgendamentoConsultaModel');
 
 function getIndex(req, res){
 
@@ -21,7 +20,9 @@ function getIndex(req, res){
 }
 
 function getAgendamentos(req, res){
-    res.render("agendamentos.html", {agendamentos});
+    AgendamentoConsulta.findAll().then((agendamentos)=>{
+        res.render("agendamentos.html", {agendamentos});
+    });
 }
 
 function postAgendamento(req, res){
@@ -84,9 +85,11 @@ function postAgendamento(req, res){
         res.redirect('/?'+query_erros);
     }
     else{
-        agendamentos.push(dados_agendamento);
-        console.log(agendamentos);
-        res.render('agendamento.html', {dados_agendamento});
+        //agendamentos.push(dados_agendamento);
+        //console.log(agendamentos);
+        AgendamentoConsulta.create(dados_agendamento).then(()=>{
+            res.render('agendamento.html', {dados_agendamento});
+        }); //e o caso de erro? catch()...
     }
     
 }
