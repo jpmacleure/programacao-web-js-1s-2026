@@ -17,6 +17,9 @@
             <div class="col-12 text-center mt-3">
                 <h1>Agendamentos confirmados</h1>
             </div>
+            <div class="col-12">
+                <a href="/" class="btn btn-link">Novo agendamento</a>
+            </div>
         </div>
 
         <div class="row mt-3">
@@ -25,18 +28,22 @@
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Sobrenome</th>
-                        <th scope="col">CPF</th>
-                        <th scope="col">Data de nascimento</th>
+                        <th scope="col">Clínica</th>
+                        <th scope="col">Especialidade</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#agendamentos}}
                     <tr>
-                        <td>{{nome}}</td>
-                        <td>{{sobrenome}}</td>
-                        <td>{{cpf}}</td>
-                        <td>{{data_nascimento}}</td>
+                        <td>{{nome}} {{sobrenome}}</td>
+                        <td>{{clinica}}</td>
+                        <td>{{especialidade}}</td>
+                        <td>
+                            <a class="btn btn-info mt-1" href="/detalhar/{{id}}">Detalhar</a>
+                            <a class="btn btn-primary mt-1" href="/editar/{{id}}">Editar</a>
+                            <a class="btn btn-danger mt-1" href="/excluir/{{id}}">Excluir</a>
+                        </td>
                     </tr>
                     {{/agendamentos}}
                 </tbody>

@@ -19,6 +19,16 @@ function getIndex(req, res){
     res.render("index.html", {dados_erros, dados_form});
 }
 
+function getDetalharAgendamento(req, res){
+    AgendamentoConsulta.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then((agendamento)=>{
+        res.render("detalha_agendamento.html", {agendamento});
+    });
+}
+
 function getAgendamentos(req, res){
     AgendamentoConsulta.findAll().then((agendamentos)=>{
         res.render("agendamentos.html", {agendamentos});
@@ -97,5 +107,6 @@ function postAgendamento(req, res){
 module.exports = {
     getIndex,
     getAgendamentos,
-    postAgendamento
+    postAgendamento,
+    getDetalharAgendamento
 }

@@ -18,6 +18,9 @@
                 <h1>Agendamento</h1>
             </div>
             <div class="col-12">
+                <a href="/agendamentos" class="btn btn-link">Ver agendamentos</a>
+            </div>
+            <div class="col-12">
                 {{#dados_erros.erro_nome}}
                 <div class="alert alert-danger mt-3" role="alert">
                     O campo <b>NOME</b> não pode ser vazio!
@@ -62,10 +65,50 @@
                     <label for="data_nascimento" class="form-label">Data de nascimento:</label>
                     <input type="date" id="data_nascimento" name="data_nascimento" class="form-control" value="{{dados_form.data_nascimento}}">
                 </div>
+                <div class="col-6 mt-1">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="text" id="telefone" name="telefone" class="form-control" value="{{dados_form.telefone}}">
+                </div>
+                <div class="col-6 mt-1">
+                    <label for="cep" class="form-label">CEP:</label>
+                    <input type="text" id="cep" name="cep" class="form-control" value="{{dados_form.cep}}">
+                </div>
+                <div class="col-12 mt-1">
+                    <label for="endereco" class="form-label">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" class="form-control" value="{{dados_form.endereco}}">
+                </div>
             </div>
             <div class="row mt-3">
                 <div class="col-12">
                     <h3>Dados da consulta</h3>
+                </div>
+                <div class="col-6 mt-1">
+                    <label for="clinica" class="form-label">Clínica:</label>
+                    <select name="clinica" id="clinica" class="form-select">
+                        <option value="Brazlândia">Brazlândia</option>
+                        <option value="Ceilândia">Ceilândia</option>
+                        <option value="Taguatinga">Taguatinga</option>
+                    </select>
+                </div>
+                <div class="col-6 mt-1">
+                    <label for="especialidade" class="form-label">Especialidade:</label>
+                    <select name="especialidade" id="especialidade" class="form-select">
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Radiologia">Radiologia</option>
+                    </select>
+                </div>
+                <div class="col-6 mt-1">
+                    <label for="data_consulta" class="form-label">Data:</label>
+                    <input type="date" id="data_consulta" name="data_consulta" class="form-control" value="{{dados_form.data_consulta}}">
+                </div>
+                <div class="col-6 mt-1">
+                    <label for="hora_consulta" class="form-label">Hora:</label>
+                    <input type="time" id="hora_consulta" name="hora_consulta" class="form-control" value="{{dados_form.hora_consulta}}">
+                </div>
+                <div class="col-12 mt-1">
+                    <label for="observacao" class="form-label">Observação:</label>
+                    <textarea name="observacao" id="observacao" class="form-control"></textarea>
                 </div>
             </div>
             <div class="row mt-3">
